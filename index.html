@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday, Sarfraz</title>
+  <meta name="description" content="A special birthday website celebrating Sarfraz Shaikh. Filled with memories, wishes, and warm thoughts.">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Great+Vibes&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <!-- FontAwesome for beautiful icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css?v=3.0">
+</head>
+<body>
+
+  <!-- Background Ambient Star Canvas -->
+  <canvas id="stardust-canvas"></canvas>
+
+
+  <!-- Sound Controller -->
+  <div class="audio-control" id="audio-control" title="Toggle ambient music">
+    <div class="visualizer" id="visualizer">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+    <button class="music-btn" id="music-btn">
+      <i class="fa-solid fa-volume-xmark"></i>
+    </button>
+  </div>
+
+  <!-- Intro/Gatekeeper Section -->
+  <section class="gatekeeper-section" id="gatekeeper">
+    <div class="glass-card gate-card">
+      
+      <!-- Interactive Portrait Trigger -->
+      <div class="portrait-trigger-container" id="portrait-trigger" title="Click to step inside!">
+        <img src="images/sarfraz_beach.jpg" alt="Sarfraz" class="portrait-trigger-img">
+      </div>
+
+      <div class="gate-header">
+        <span class="date-badge">June 26, 2026</span>
+        <h1 class="gate-title script-font">For Sarfraz Shaikh</h1>
+        <p class="intro-subtitle">A collection of quiet wishes, memories, and warm thoughts celebrating you today.</p>
+      </div>
+      <div class="pulsing-container">
+        <button class="btn btn-enter" id="btn-enter">
+          <span>Step Inside</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Website Container (Hidden initially, fades in) -->
+  <main class="main-content hide" id="main-content">
+    
+    <!-- Hero / Welcome Header -->
+    <header class="hero-header">
+      <div class="container">
+        <div class="hero-badge">June 26, 2026</div>
+        <h1 class="main-title font-serif">Happy Birthday, <span class="highlight">Sarfraz</span>.</h1>
+        <p class="hero-desc">You are a very special person who holds a permanent place in my heart. Today is a celebration of your presence in this world, your journey, and the beautiful person you are.</p>
+        <div class="scroll-prompt" id="scroll-prompt">
+          <span>Scroll to explore</span>
+          <i class="fa-solid fa-chevron-down animate-bounce"></i>
+        </div>
+      </div>
+    </header>
+
+    <!-- Magical Jar Section -->
+    <section class="section jar-section" id="jar-section">
+      <div class="container">
+        <div class="section-header reveal-item">
+          <span class="pre-title">Warm Thoughts</span>
+          <h2 class="section-title font-serif">Jar of Little Wishes</h2>
+          <p class="section-subtitle">Tap the glowing glass jar to draw a warm thought or wish written for you.</p>
+        </div>
+
+        <div class="jar-wrapper reveal-item">
+          
+          <!-- The Glowing Glass Jar -->
+          <div class="jar-container" id="jar-container" title="Click to draw a wish!">
+            <div class="jar-lid"></div>
+            <div class="jar-mouth"></div>
+            <div class="jar-body">
+              <!-- Floating sparks inside the jar -->
+              <span class="jar-spark spark-1"></span>
+              <span class="jar-spark spark-2"></span>
+              <span class="jar-spark spark-3"></span>
+              <span class="jar-spark spark-4"></span>
+              <span class="jar-spark spark-5"></span>
+            </div>
+            <div class="jar-label">
+              <span class="script-font">Wishes</span>
+            </div>
+            <div class="jar-glow"></div>
+          </div>
+
+          <!-- The Floating Heart Note (hidden initially, animates out of the jar) -->
+          <div class="heart-note-container hide" id="heart-note">
+            <div class="heart-shape">
+              <i class="fa-solid fa-heart"></i>
+            </div>
+            <div class="heart-content glass-card">
+              <span class="handwritten-date">June 26, 2026</span>
+              <h3 class="handwritten-title script-font" id="heart-note-title">A Little Reminder</h3>
+              <p class="handwritten-note" id="heart-note-text">You are a wonderful soul who deserves all the happiness in the world.</p>
+              <div class="close-note-btn" id="close-note-btn" title="Close note">
+                <i class="fa-solid fa-xmark"></i>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Birthday Cake Section -->
+    <section class="section cake-section" id="cake">
+      <div class="container">
+        <div class="section-header reveal-item">
+          <span class="pre-title">A Sweet Celebration</span>
+          <h2 class="section-title font-serif">Make a Wish</h2>
+          <p class="section-subtitle">Click the candles to blow them out, or use the button below!</p>
+        </div>
+
+        <div class="cake-wrapper reveal-item">
+          <div class="cake-container">
+            <div class="cake-stand"></div>
+            <div class="cake-plate"></div>
+            <div class="cake-body">
+              <!-- Candles -->
+              <div class="candles-container">
+                <div class="candle active" id="candle-1">
+                  <div class="wick"></div>
+                  <div class="flame"></div>
+                </div>
+                <div class="candle active" id="candle-2">
+                  <div class="wick"></div>
+                  <div class="flame"></div>
+                </div>
+                <div class="candle active" id="candle-3">
+                  <div class="wick"></div>
+                  <div class="flame"></div>
+                </div>
+              </div>
+
+              <!-- Top Layer -->
+              <div class="cake-layer layer-top">
+                <div class="frosting"></div>
+                <div class="sprinkles">
+                  <span></span><span></span><span></span><span></span><span></span>
+                </div>
+              </div>
+
+              <!-- Middle Layer -->
+              <div class="cake-layer layer-middle">
+                <div class="frosting"></div>
+                <div class="sprinkles">
+                  <span></span><span></span><span></span><span></span><span></span><span></span>
+                </div>
+              </div>
+
+              <!-- Bottom Layer -->
+              <div class="cake-layer layer-bottom">
+                <div class="frosting"></div>
+                <div class="sprinkles">
+                  <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="cake-actions">
+            <button class="btn btn-blow" id="btn-blow">
+              <i class="fa-solid fa-wind animate-pulse"></i>
+              <span>Blow out the candles</span>
+            </button>
+          </div>
+
+          <div class="cake-message glass-card hide" id="cake-message">
+            <h3 class="font-serif highlight">May all your wishes come true!</h3>
+            <p>On your special day, may the universe conspire to bring you endless peace, joy, success, and the fulfillment of your deepest dreams.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Heartfelt Letter Section -->
+    <section class="section letter-section" id="letter">
+      <div class="container">
+        <div class="section-header reveal-item">
+          <span class="pre-title">A Message for You</span>
+          <h2 class="section-title font-serif">A Heartfelt Note</h2>
+          <p class="section-subtitle">Click the wax seal or the envelope to open a quiet letter written especially for you.</p>
+        </div>
+
+        <div class="envelope-wrapper reveal-item">
+          <div class="envelope" id="envelope">
+            <div class="flap top-flap"></div>
+            <div class="pocket"></div>
+            <div class="wax-seal" id="wax-seal">
+              <div class="wax-seal-inner">
+                <i class="fa-solid fa-heart"></i>
+              </div>
+            </div>
+            <div class="letter-paper" id="letter-paper">
+              <div class="letter-scroll-area">
+                <div class="letter-header">
+                  <h3 class="script-font">Dear Sarfraz,</h3>
+                  <span class="letter-date">June 26, 2026</span>
+                </div>
+                <div class="letter-body">
+                  <p>Happy Birthday to someone who has been one of the most significant and cherished chapters of my life. As you celebrate another year, I wanted to take a moment to send you a message filled with genuine warmth and respect.</p>
+                  
+                  <p>Relationships change, and life takes us on different journeys, but the connection we built, the support we offered one another, and the laughter we shared are things I hold close to my heart. You are a truly special person, Sarfraz. Your kindness, strength, and unique perspective on life are qualities that inspire everyone around you, including me.</p>
+                  
+                  <p>On your special day, my wish for you is absolute happiness. I hope you find success in every endeavor you pursue, strength in moments of doubt, and joy in the everyday things. May this year bring you closer to your dreams, surround you with love and warmth, and grant you the peace and clarity you deserve.</p>
+                  
+                  <p>Thank you for being who you are, and for the memories that will always remain a beautiful part of my story. I am forever cheering for you from afar, wishing you nothing but the absolute best.</p>
+                </div>
+                <div class="letter-footer">
+                  <p class="signature-intro">With warm thoughts and respect,</p>
+                  <p class="script-font signature-name">Always,</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="envelope-hint">
+          <p id="envelope-hint-text">Click envelope to open</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <p class="footer-blurb">Celebrating the beautiful soul that you are.</p>
+        <div class="footer-divider"></div>
+        <p class="copyright">&copy; 2026. Made with care & respect for Sarfraz Shaikh.</p>
+      </div>
+    </footer>
+
+  </main>
+
+  <script src="app.js?v=2.7"> </script>
+</body>
+</html>
