@@ -416,7 +416,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const jarThoughts = [
     {
       title: "Warm Reminder",
-      text: "You hold a permanent place in my heart, Sarfraz. Your kindness, strength, and genuine presence make the world a warmer place just by having you in it."
+      text: "You hold a permanent place in my heart, Sarfraz Ji. Your kindness, strength, and genuine presence make the world a warmer place just by having you in it."
     },
     {
       title: "Wishing You Joy",
