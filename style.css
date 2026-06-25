@@ -1404,8 +1404,17 @@ p {
   }
 
   .heart-note-container {
+    position: static;
+    top: auto;
+    transform: none;
+    opacity: 1;
+    pointer-events: auto;
     max-width: 320px;
-    top: 55px;
+    margin-top: 1.75rem;
+  }
+
+  .heart-note-container.show {
+    transform: none;
   }
 
   .heart-content {
