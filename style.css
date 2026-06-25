@@ -770,10 +770,20 @@ p {
   cursor: pointer;
   transform-style: preserve-3d;
   transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
 }
 
-.envelope:hover {
-  transform: translateY(-8px) scale(1.02);
+.envelope.open {
+  overflow: visible;
+}
+
+  .envelope:hover {
+    transform: translateY(-8px) scale(1.02);
+  }
+
+  .envelope-open-state {
+    cursor: pointer;
+  }
 }
 
 /* Front Pocket & Inside Foldings of Envelope */
@@ -888,8 +898,15 @@ p {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   z-index: 2;
   padding: 1.5rem 1.75rem;
-  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.3s, height 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.5s, z-index 0.1s ease 0.5s;
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.3s, height 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.5s, z-index 0.1s ease 0.5s, opacity 0.4 0.4s ease;
   overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.envelope.open .letter-paper {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 /* Scroll area in paper */
@@ -916,11 +933,8 @@ p {
   height: 420px;
   z-index: 5;
   box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4);
-}
-
-/* Letter Content Styles */
-.letter-header {
-  display: flex;
+    opacity: 1;
+    pointer-events: auto;
   justify-content: space-between;
   align-items: baseline;
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
